@@ -7,11 +7,24 @@ public class ScenarioCasDegrade {
 	
 	public static void main(String[] args) { 
 		Etal etal = new Etal();
-		Gaulois idefix = new Gaulois("Idéfix", 300000);
+		Gaulois idefix = new Gaulois("Idéfix", 10);
+		Village village = new Village("Les irréductibles", 10, 3);
 		
-		etal.occuperEtal(idefix, "Ménhirs", 300000);
+		// etal.occuperEtal(idefix, "Ménhirs", 2);
 		
-		etal.acheterProduit(100, null);
+		/*try {
+			etal.acheterProduit(0, idefix);
+		}
+		catch(IllegalArgumentException | IllegalStateException e) {
+			e.printStackTrace();
+		}*/
+		
+		try {
+			village.afficherVillageois();
+		}
+		catch(VillageSansChefException e) {
+			e.printStackTrace();
+		}
 		
 		System.out.println("Fin du test");
 	}
